@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/txtCodigoEdit"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Código"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:layout_marginBottom="12dp" />
+
+            <Button
+                android:id="@+id/btnBuscarEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buscar" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/txtNombreEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre del Producto"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:layout_marginBottom="12dp" />
+
+        <EditText
+            android:id="@+id/txtMarcaEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Marca"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:layout_marginBottom="12dp" />
+
+        <EditText
+            android:id="@+id/txtPrecioEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Precio"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp"
+            android:layout_marginBottom="12dp" />
+
+        <RadioGroup
+            android:id="@+id/rgTipoEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="12dp">
+
+            <RadioButton
+                android:id="@+id/rbPerecederoEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="perecedero" />
+
+            <RadioButton
+                android:id="@+id/rbNoPerecederoEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No perecedero" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnBorrar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Borrar" />
+
+            <Button
+                android:id="@+id/btnActualizar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="Actualizar" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnCerrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cerrar"
+            android:layout_marginTop="16dp" />
+    </LinearLayout>
+</ScrollView>

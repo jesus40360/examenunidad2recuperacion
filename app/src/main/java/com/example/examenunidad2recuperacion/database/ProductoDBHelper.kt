@@ -4,12 +4,14 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
-class ProductoDBHelper(context: Context) :
-    SQLiteOpenHelper(context, "sistema.db", null, 1) {
+class ProductosDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     companion object {
-        const val TABLA = "productos"
-        const val COL_CODIGO = "codigo"
+        const val DATABASE_NAME = "productos.db"
+        const val DATABASE_VERSION = 1
+
+        const val TABLA = "Productos"
+        const val COL_ID = "codigo"
         const val COL_NOMBRE = "nombre"
         const val COL_MARCA = "marca"
         const val COL_PRECIO = "precio"
@@ -18,7 +20,7 @@ class ProductoDBHelper(context: Context) :
 
     override fun onCreate(db: SQLiteDatabase) {
         val sql = "CREATE TABLE $TABLA (" +
-                "$COL_CODIGO INTEGER PRIMARY KEY, " +
+                "$COL_ID INTEGER PRIMARY KEY, " +   // <-- quitar AUTOINCREMENT
                 "$COL_NOMBRE TEXT, " +
                 "$COL_MARCA TEXT, " +
                 "$COL_PRECIO REAL, " +
@@ -26,7 +28,8 @@ class ProductoDBHelper(context: Context) :
         db.execSQL(sql)
     }
 
-    override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-        // En este examen no se requiere actualización de versión.
+    override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
+        db.execSQL("DROP TABLE IF EXISTS $TABLA")
+        onCreate(db)
     }
 }
