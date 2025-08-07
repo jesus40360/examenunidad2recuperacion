@@ -14,7 +14,6 @@
         android:theme="@style/Theme.Examenunidad2recuperacion"
         tools:targetApi="31">
 
-        <!-- Actividad principal -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
